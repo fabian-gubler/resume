@@ -406,7 +406,8 @@
 % Usage: \makecvheader
 \newcommand*{\makecvheader}{%
   \begin{center}
- \headerlastnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
+ \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
+ % \headerlastnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
@@ -573,6 +574,18 @@
   \end{tabular*} 
 }
 
+\newcommand*{\cventryalt}[5]{%
+  \vspace{-1.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{0.5\textwidth - 0.3cm}{@{\extracolsep{\fill}} L{0.5\textwidth - 4.5cm} R{1.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \multicolumn{2}{L{0.5\textwidth - 0.3cm}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
 
 % \newcommand*{\cventry}[5]{%
 %   \setlength\tabcolsep{0pt}
@@ -682,7 +695,7 @@
     \setlength\tabcolsep{1ex}
     % \setlength\tabcolsep{-5ex}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{0.5\textwidth - 0.3cm}[t]{@{\extracolsep{\fill}} R{2.5cm} L{0.5\textwidth - 0.8cm} }
+    \begin{tabular*}{0.5\textwidth - 0.3cm}[t]{@{\extracolsep{\fill}} R{3cm} L{0.5\textwidth - 0.8cm} }
 }{%
     \end{tabular*}
   \end{center}
