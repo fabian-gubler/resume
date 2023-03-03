@@ -23,8 +23,8 @@
 \newif\ifen
 \newif\ifde
 
-\newcommand{\en}[1]{\ifen#1\fi}
-\newcommand{\de}[1]{\ifde#1\fi}
+\newcommand{\en}[1]{\ifen#1\fi}%
+\newcommand{\de}[1]{\ifde#1\fi}%
 
 %-------------------------------------------------------------------------------
 %                Identification
