@@ -67,6 +67,9 @@
 \RequirePackage{fancyhdr}
 % Needed to manage colors
 \RequirePackage{xcolor}
+\colorlet{accent}{blue!70!black}
+\colorlet{emphasis}{black}
+
 % Needed to use \ifxetex-\else-\fi statement
 \RequirePackage{ifxetex}
 % Needed to use \if-\then-\else statement
@@ -517,6 +520,7 @@
   \end{center}%
 }
 
+
 % Define a footer for CV
 % Usage: \makecvfooter{<left>}{<center>}{<right>}
 \newcommand*{\makecvfooter}[3]{%
@@ -549,6 +553,30 @@
   \paragraphstyle
 }{%
   \vspace{1mm}
+}
+
+% Define an environment for cventry
+\newenvironment{projects}{%
+%   \begin{center}
+% }{%
+%   \end{center}
+}
+
+
+% Define a new project
+\newcommand{\project}[4]{%
+  {\small\color{emphasis}\href{https://github.com/#1}{{\color{accent}{\faGithub\hspace{0.1em} #1}}}}
+  % \phantomsection
+  \vspace{-3mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+
+\descriptionstyle{#2}
+  \hfill \break
+  \descriptionstyle{#3}
+  % \hfill \break
+  \vspace{0.5mm}
+
 }
 
 

@@ -43,7 +43,7 @@ NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
 NIX_HARDENING_ENABLE='fortify stackprotector pic strictoverflow format relro bindnow'
 export NIX_HARDENING_ENABLE
-NIX_LDFLAGS='-rpath /home/fabian/Awesome-CV/outputs/out/lib64 -rpath /home/fabian/Awesome-CV/outputs/out/lib  -L/nix/store/jkc8qcbl4sd0bi16z6bfvrxgyw6zb3rv-python3-3.9.16/lib -L/nix/store/jkc8qcbl4sd0bi16z6bfvrxgyw6zb3rv-python3-3.9.16/lib'
+NIX_LDFLAGS='-rpath /home/fabian/resume/outputs/out/lib64 -rpath /home/fabian/resume/outputs/out/lib  -L/nix/store/jkc8qcbl4sd0bi16z6bfvrxgyw6zb3rv-python3-3.9.16/lib -L/nix/store/jkc8qcbl4sd0bi16z6bfvrxgyw6zb3rv-python3-3.9.16/lib'
 export NIX_LDFLAGS
 NIX_LIB64_IN_SELF_RPATH='1'
 NIX_NO_SELF_RPATH='1'
@@ -147,7 +147,7 @@ name='nix-shell'
 export name
 nativeBuildInputs=''
 export nativeBuildInputs
-out='/home/fabian/Awesome-CV/outputs/out'
+out='/home/fabian/resume/outputs/out'
 export out
 outputBin='out'
 outputDev='out'
@@ -175,7 +175,7 @@ declare -a postFixupHooks=('_makeSymlinksRelativeInAllOutputs' '_multioutPropaga
 declare -a postUnpackHooks=('_updateSourceDateEpochFromSourceRoot' )
 declare -a preConfigureHooks=('_multioutConfig' )
 declare -a preFixupHooks=('_moveToShare' '_multioutDocs' '_multioutDevs' )
-prefix='/home/fabian/Awesome-CV/outputs/out'
+prefix='/home/fabian/resume/outputs/out'
 declare -a propagatedBuildDepFiles=('propagated-build-build-deps' 'propagated-native-build-inputs' 'propagated-build-target-deps' )
 propagatedBuildInputs=''
 export propagatedBuildInputs
