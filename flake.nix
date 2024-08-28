@@ -55,6 +55,7 @@
           texlab
           zathura
           wmctrl
+          jdk
         ];
       in
       rec {
